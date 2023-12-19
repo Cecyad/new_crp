@@ -1,5 +1,6 @@
 #!/bin/bash
-#Cecilia Angulo
+#Cecilia Angulo,
+#Emmanuel Felix
 
 # Set colors and formatting
 GREEN='\033[0;32m'
