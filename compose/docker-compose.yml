@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  repositories:
+    build: .
+    working_dir: /app
+    volumes:
+      - ../src:/app
+      - ./repositories/${REPOSITORY}/variables.tfvars:/app/terraform.auto.tfvars
+    env_file:
+      - ./.env
+    environment:
+      - TF_HTTP_ADDRESS=https://gitlab.com/api/v4/projects/${TF_STATE_PROJECT_ID}/terraform/state/${TF_STATE_ENVIRONMENT}
+      - TF_HTTP_LOCK_ADDRESS=https://gitlab.com/api/v4/projects/${TF_STATE_PROJECT_ID}/terraform/state/${TF_STATE_ENVIRONMENT}/lock
+      - TF_HTTP_UNLOCK_ADDRESS=https://gitlab.com/api/v4/projects/${TF_STATE_PROJECT_ID}/terraform/state/${TF_STATE_ENVIRONMENT}/lock
+    networks:
+      localstack_network:
+
+networks:
+  localstack_network:
