@@ -1,5 +1,4 @@
 #!/bin/bash
-#commit 2
 
 # Set colors and formatting
 GREEN='\033[0;32m'
