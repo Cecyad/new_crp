@@ -1,7 +1,7 @@
 
 # GitLab with Terraform
 
-This project is for the creation of new groups and repositories in GitLab
+This project is to facilitate the creation and initial configuration of repositories and groups in GitLab
 
 ## Pre-requisites
 
